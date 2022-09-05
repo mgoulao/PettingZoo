@@ -291,18 +291,72 @@
 <h1>Butterfly<a class="headerlink" href="#butterfly" title="Permalink to this heading">#</a></h1>
 <div class="toctree-wrapper compound">
 </div>
-<p>The unique dependencies for this set of environments can be installed via:</p>
+
+<!DOCTYPE html>
+<html>
+    <body>
+        <link rel="stylesheet" href="/_static/css/env_pages.css">
+        <div class="env-grid">
+            
+            <a href="cooperative_pong">
+                <div class="env-grid__cell">
+                    <div class="cell__image-container">
+                        <img src="/_images/butterfly_cooperative_pong.gif">
+                    </div>
+                    <div class="cell__title">
+                        <span>Cooperative Pong</span>
+                    </div>
+                </div>
+            </a>
+    
+
+            <a href="knights_archers_zombies">
+                <div class="env-grid__cell">
+                    <div class="cell__image-container">
+                        <img src="/_images/butterfly_knights_archers_zombies.gif">
+                    </div>
+                    <div class="cell__title">
+                        <span>Knights Archers Zombies</span>
+                    </div>
+                </div>
+            </a>
+    
+
+            <a href="pistonball">
+                <div class="env-grid__cell">
+                    <div class="cell__image-container">
+                        <img src="/_images/butterfly_pistonball.gif">
+                    </div>
+                    <div class="cell__title">
+                        <span>Pistonball</span>
+                    </div>
+                </div>
+            </a>
+    
+
+            <a href="prospector">
+                <div class="env-grid__cell">
+                    <div class="cell__image-container">
+                        <img src="/_images/butterfly_prospector.gif">
+                    </div>
+                    <div class="cell__title">
+                        <span>Prospector</span>
+                    </div>
+                </div>
+            </a>
+    
+        </div>
+        
+    </body>
+</html>
+    <p>The unique dependencies for this set of environments can be installed via:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install pettingzoo<span class="o">[</span>butterfly<span class="o">]</span>
 </pre></div>
 </div>
 <p>All butterfly environments were created by us using PyGame with visual Atari spaces. In Prison, all agents are completely independent (i.e. no coordination is possible, each agent is in it’s own cell). It is intended as a debugging tool.</p>
 <p>All other environments require a high degree of coordination and require learning of emergent behaviors to achieve an optimal policy. As such, these environments are currently very challenging to learn.</p>
 <p>All environments are highly configurable via arguments specified in each environment’s documentation.</p>
-</div>
-<div class="selection-table-container" markdown="1">
-## Butterfly
-<p>{% include bigtable.html group=”butterfly/” cols=3 %}</p>
-</div></section>
+</section>
 
         </article>
       </div>
@@ -318,17 +372,7 @@
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../atari/wizard_of_wor/">
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-              <div class="page-info">
-                <div class="context">
-                  <span>Previous</span>
-                </div>
-                
-                <div class="title">Wizard of Wor</div>
-                
-              </div>
-            </a>
+          
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
