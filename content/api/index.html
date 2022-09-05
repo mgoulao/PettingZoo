@@ -202,7 +202,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../environments/butterfly/cooperative_pong/">Cooperative Pong</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../environments/butterfly/knights_archers_zombies/">Knights Archers Zombies (‘KAZ’)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../environments/butterfly/pistonball/">Pistonball</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../environments/butterfly/prospector/">Prospector</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../environments/classic/">Classic</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -356,7 +355,7 @@
 <section id="unwrapping-an-environment">
 <h3>Unwrapping an environment<a class="headerlink" href="#unwrapping-an-environment" title="Permalink to this heading">#</a></h3>
 <p>If you have a wrapped environment, and you want to get the unwrapped environment underneath all the layers of wrappers (so that you can manually call a function or change some underlying aspect of the environment), you can use the <code class="docutils literal notranslate"><span class="pre">.unwrapped</span></code> attribute. If the environment is already a base environment, the <code class="docutils literal notranslate"><span class="pre">.unwrapped</span></code> attribute will just return itself.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">base_env</span> <span class="o">=</span> <span class="n">prospector_v4</span><span class="o">.</span><span class="n">env</span><span class="p">()</span><span class="o">.</span><span class="n">unwrapped</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">base_env</span> <span class="o">=</span> <span class="n">knights_archers_zombies_v10</span><span class="o">.</span><span class="n">env</span><span class="p">()</span><span class="o">.</span><span class="n">unwrapped</span>
 </pre></div>
 </div>
 </section>
@@ -372,7 +371,7 @@
 <section id="raw-environments">
 <h2>Raw Environments<a class="headerlink" href="#raw-environments" title="Permalink to this heading">#</a></h2>
 <p>Environments are by default wrapped in a handful of lightweight wrappers that handle error messages and ensure reasonable behavior given incorrect usage (i.e. playing illegal moves or stepping before resetting). However, these add a very small amount of overhead. If you want to create an environment without them, you can do so by using the <code class="docutils literal notranslate"><span class="pre">raw_env()</span></code> constructor contained within each module:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">env</span> <span class="o">=</span> <span class="n">prospector_v4</span><span class="o">.</span><span class="n">raw_env</span><span class="p">(</span><span class="o">&lt;</span><span class="n">environment</span> <span class="n">parameters</span><span class="o">&gt;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">env</span> <span class="o">=</span> <span class="n">knights_archers_zombies_v10</span><span class="o">.</span><span class="n">raw_env</span><span class="p">(</span><span class="o">&lt;</span><span class="n">environment</span> <span class="n">parameters</span><span class="o">&gt;</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
