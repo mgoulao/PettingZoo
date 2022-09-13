@@ -3,11 +3,11 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Atari" href="../../environments/atari/" /><link rel="prev" title="Wrappers" href="../wrappers/" />
-        <link rel="canonical" href="https://www.pettingzoo.ml/content/tutorials.html" />
+<link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Wrappers" href="../wrappers/" /><link rel="prev" title="Environment Creation" href="../environment_creation/" />
+        <link rel="canonical" href="https://www.pettingzoo.ml/content/environment_tests.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.png"/><meta name="generator" content="sphinx-5.1.1, furo 2022.06.21"/>
-        <title>Tutorials - PettingZoo Documentation</title>
+        <title>Environment Tests - PettingZoo Documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -166,9 +166,9 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../api/">API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../environment_creation/">Environment Creation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../environment_tests/">Environment Tests</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Environment Tests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../wrappers/">Wrappers</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/">Tutorials</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Environments</span></p>
 <ul>
@@ -282,26 +282,103 @@
         </div>
         <article role="main">
           
-          <section id="tutorials">
-<h1>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this heading">#</a></h1>
-<section id="recommended-start">
-<h2>Recommended start<a class="headerlink" href="#recommended-start" title="Permalink to this heading">#</a></h2>
-<p><a class="reference external" href="https://towardsdatascience.com/multi-agent-deep-reinforcement-learning-in-15-lines-of-code-using-pettingzoo-e0b963c0820b">Multi-Agent Deep Reinforcement Learning in 13 Lines of Code Using PettingZoo</a></p>
-<p>A very beginner-friendly introduction to learning the Pistonball environment using SuperSuit and Stable Baselines 3.</p>
+          <section id="environment-tests">
+<h1>Environment Tests<a class="headerlink" href="#environment-tests" title="Permalink to this heading">#</a></h1>
+<p>PettingZoo has a number of compliance tests for environments through. If you are adding a new environment, we encourage you to run these tests on your own environment.</p>
+<section id="api-test">
+<h2>API Test<a class="headerlink" href="#api-test" title="Permalink to this heading">#</a></h2>
+<p>PettingZoo’s API has a number of features and requirements. To make sure your environment is consistent with the API, we have the api_test. Below is an example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pettingzoo.test</span> <span class="kn">import</span> <span class="n">api_test</span>
+<span class="kn">from</span> <span class="nn">pettingzoo.butterfly</span> <span class="kn">import</span> <span class="n">pistonball_v6</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">pistonball_v6</span><span class="o">.</span><span class="n">env</span><span class="p">()</span>
+<span class="n">api_test</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">num_cycles</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">verbose_progress</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>As you can tell, you simply pass an environment to the test. The test will assert or give some other error on an API issue, and will return normally if it passes.</p>
+<p>The optional arguments are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">num_cycles</span></code>: runs the environment for that many cycles and checks that the output is consistent with the API.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">verbose_progress</span></code>: Prints out messages to indicate partial completion of the test. Useful for debugging environments.</p></li>
+</ul>
 </section>
-<section id="other-tutorials">
-<h2>Other tutorials<a class="headerlink" href="#other-tutorials" title="Permalink to this heading">#</a></h2>
-<section id="learning-tic-tac-toe-for-beginners-in-pettingzoo">
-<h3>Learning Tic-Tac-Toe for Beginners in PettingZoo<a class="headerlink" href="#learning-tic-tac-toe-for-beginners-in-pettingzoo" title="Permalink to this heading">#</a></h3>
-<p><a class="reference external" href="https://nbviewer.jupyter.org/github/gsverhoeven/gt_rl_course/blob/master/week_8/marl_tictactoe.ipynb">https://nbviewer.jupyter.org/github/gsverhoeven/gt_rl_course/blob/master/week_8/marl_tictactoe.ipynb</a></p>
-<p><a class="reference external" href="https://nbviewer.jupyter.org/github/gsverhoeven/gt_rl_course/blob/master/week_8/marl_tictactoe_pt2.ipynb">https://nbviewer.jupyter.org/github/gsverhoeven/gt_rl_course/blob/master/week_8/marl_tictactoe_pt2.ipynb</a></p>
-<p>An example-based introduction to the PettingZoo API for beginners, that then shows users how to use tabular Q Learning for self play in the Tic Tac Toe environment.</p>
+<section id="parallel-api-test">
+<h2>Parallel API Test<a class="headerlink" href="#parallel-api-test" title="Permalink to this heading">#</a></h2>
+<p>This is an analogous version of the API test, but for parallel environments. You can use this test like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pettingzoo.test</span> <span class="kn">import</span> <span class="n">parallel_api_test</span>
+<span class="kn">from</span> <span class="nn">pettingzoo.butterfly</span> <span class="kn">import</span> <span class="n">pistonball_v6</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">pistonball_v6</span><span class="o">.</span><span class="n">parallel_env</span><span class="p">()</span>
+<span class="n">parallel_api_test</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">num_cycles</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
-<section id="using-pettingzoo-with-rllib-for-multi-agent-deep-reinforcement-learning">
-<h3>Using PettingZoo with RLlib for Multi-Agent Deep Reinforcement Learning<a class="headerlink" href="#using-pettingzoo-with-rllib-for-multi-agent-deep-reinforcement-learning" title="Permalink to this heading">#</a></h3>
-<p><a class="reference external" href="https://towardsdatascience.com/using-pettingzoo-with-rllib-for-multi-agent-deep-reinforcement-learning-5ff47c677abd">https://towardsdatascience.com/using-pettingzoo-with-rllib-for-multi-agent-deep-reinforcement-learning-5ff47c677abd</a></p>
-<p>A tutorial on learning PettingZoo multi-agent environments with the RLlib reinforcement learning library, intended for those generally new to RLlib but with nontrivial experimence in reinforcement learning</p>
+<section id="seed-test">
+<h2>Seed Test<a class="headerlink" href="#seed-test" title="Permalink to this heading">#</a></h2>
+<p>To have a properly reproducible environment that utilizes randomness, you need to be able to make it deterministic during evaluation by setting a seed for the random number generator that defines the random behavior. The seed test checks that calling the <code class="docutils literal notranslate"><span class="pre">seed()</span></code> method with a constant actually makes the environment deterministic.</p>
+<p>The seed test takes in a function that creates a pettingzoo environment. For example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pettingzoo.test</span> <span class="kn">import</span> <span class="n">seed_test</span><span class="p">,</span> <span class="n">parallel_seed_test</span>
+<span class="kn">from</span> <span class="nn">pettingzoo.butterfly</span> <span class="kn">import</span> <span class="n">pistonball_v6</span>
+<span class="n">env_fn</span> <span class="o">=</span> <span class="n">pistonball_v6</span><span class="o">.</span><span class="n">env</span>
+<span class="n">seed_test</span><span class="p">(</span><span class="n">env_fn</span><span class="p">,</span> <span class="n">num_cycles</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">test_kept_state</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># or for parallel environments</span>
+<span class="n">parallel_env_fn</span> <span class="o">=</span> <span class="n">pistonball_v6</span><span class="o">.</span><span class="n">parallel_env</span>
+<span class="n">parallel_seed_test</span><span class="p">(</span><span class="n">parallel_env_fn</span><span class="p">,</span> <span class="n">num_cycles</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">test_kept_state</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Internally, there are two separate tests.</p>
+<ol class="arabic simple">
+<li><p>Do two separate environments give the same result after the environment is seeded?</p></li>
+<li><p>Does a single environment give the same result after seed() then reset() is called?</p></li>
+</ol>
+<p>The first optional argument, <code class="docutils literal notranslate"><span class="pre">num_cycles</span></code>, indicates how long the environment will be run to check for determinism. Some environments only fail the test long after initialization.</p>
+<p>The second optional argument, <code class="docutils literal notranslate"><span class="pre">test_kept_state</span></code> allows the user to disable the second test. Some physics based environments fail this test due to barely detectable differences due to caches, etc, which are not important enough to matter.</p>
+<section id="max-cycles-test">
+<h3>Max Cycles Test<a class="headerlink" href="#max-cycles-test" title="Permalink to this heading">#</a></h3>
+<p>The max cycles test tests that the <code class="docutils literal notranslate"><span class="pre">max_cycles</span></code> environment argument exists and the resulting environment actually runs for the correct number of cycles. If your environment does not take a <code class="docutils literal notranslate"><span class="pre">max_cycles</span></code> argument, you should not run this test. The reason this test exists is that many off-by-one errors are possible when implementing <code class="docutils literal notranslate"><span class="pre">max_cycles</span></code>. An example test usage looks like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pettingzoo.test</span> <span class="kn">import</span> <span class="n">max_cycles_test</span>
+<span class="kn">from</span> <span class="nn">pettingzoo.butterfly</span> <span class="kn">import</span> <span class="n">pistonball_v6</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">pistonball_v6</span><span class="o">.</span><span class="n">env</span><span class="p">()</span>
+<span class="n">max_cycles_test</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
+</section>
+<section id="render-test">
+<h2>Render Test<a class="headerlink" href="#render-test" title="Permalink to this heading">#</a></h2>
+<p>The render test checks that rendering 1) does not crash and 2) produces output of the correct type when given a mode (only supports <code class="docutils literal notranslate"><span class="pre">'human'</span></code>, <code class="docutils literal notranslate"><span class="pre">'ansi'</span></code>, and <code class="docutils literal notranslate"><span class="pre">'rgb_array'</span></code> modes).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pettingzoo.test</span> <span class="kn">import</span> <span class="n">render_test</span>
+<span class="kn">from</span> <span class="nn">pettingzoo.butterfly</span> <span class="kn">import</span> <span class="n">pistonball_v6</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">pistonball_v6</span><span class="o">.</span><span class="n">env</span><span class="p">()</span>
+<span class="n">render_test</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The render test method takes in an optional argument <code class="docutils literal notranslate"><span class="pre">custom_tests</span></code> that allows for additional tests in non-standard modes.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">custom_tests</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;svg&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">render_result</span><span class="p">:</span> <span class="k">return</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">render_result</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="n">render_test</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">custom_tests</span><span class="o">=</span><span class="n">custom_tests</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="performance-benchmark-test">
+<h2>Performance Benchmark Test<a class="headerlink" href="#performance-benchmark-test" title="Permalink to this heading">#</a></h2>
+<p>To make sure we do not have performance regressions, we have the performance benchmark test. This test simply prints out the number of steps and cycles that the environment takes in 5 seconds. This test requires manual inspection of its outputs:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pettingzoo.test</span> <span class="kn">import</span> <span class="n">performance_benchmark</span>
+<span class="kn">from</span> <span class="nn">pettingzoo.butterfly</span> <span class="kn">import</span> <span class="n">pistonball_v6</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">pistonball_v6</span><span class="o">.</span><span class="n">env</span><span class="p">()</span>
+<span class="n">performance_benchmark</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="save-observation-test">
+<h2>Save Observation Test<a class="headerlink" href="#save-observation-test" title="Permalink to this heading">#</a></h2>
+<p>The save observation test is to visually inspect the observations of games with graphical observations to make sure they are what is intended. We have found that observations are a huge source of bugs in environments, so it is good to manually check them when possible. This test just tries to save the observations of all the agents. If it fails, then it just prints a warning. The output needs to be visually inspected for correctness.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pettingzoo.test</span> <span class="kn">import</span> <span class="n">test_save_obs</span>
+<span class="kn">from</span> <span class="nn">pettingzoo.butterfly</span> <span class="kn">import</span> <span class="n">pistonball_v6</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">pistonball_v6</span><span class="o">.</span><span class="n">env</span><span class="p">()</span>
+<span class="n">test_save_obs</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -310,23 +387,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../../environments/atari/">
+          <a class="next-page" href="../wrappers/">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Atari</div>
+                <div class="title">Wrappers</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../wrappers/">
+          <a class="prev-page" href="../environment_creation/">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Wrappers</div>
+                <div class="title">Environment Creation</div>
                 
               </div>
             </a>
@@ -362,13 +439,16 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Tutorials</a><ul>
-<li><a class="reference internal" href="#recommended-start">Recommended start</a></li>
-<li><a class="reference internal" href="#other-tutorials">Other tutorials</a><ul>
-<li><a class="reference internal" href="#learning-tic-tac-toe-for-beginners-in-pettingzoo">Learning Tic-Tac-Toe for Beginners in PettingZoo</a></li>
-<li><a class="reference internal" href="#using-pettingzoo-with-rllib-for-multi-agent-deep-reinforcement-learning">Using PettingZoo with RLlib for Multi-Agent Deep Reinforcement Learning</a></li>
+<li><a class="reference internal" href="#">Environment Tests</a><ul>
+<li><a class="reference internal" href="#api-test">API Test</a></li>
+<li><a class="reference internal" href="#parallel-api-test">Parallel API Test</a></li>
+<li><a class="reference internal" href="#seed-test">Seed Test</a><ul>
+<li><a class="reference internal" href="#max-cycles-test">Max Cycles Test</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#render-test">Render Test</a></li>
+<li><a class="reference internal" href="#performance-benchmark-test">Performance Benchmark Test</a></li>
+<li><a class="reference internal" href="#save-observation-test">Save Observation Test</a></li>
 </ul>
 </li>
 </ul>
