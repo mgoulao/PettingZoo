@@ -6,12 +6,11 @@
 <link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" /><link rel="next" title="Hanabi" href="../hanabi/" /><link rel="prev" title="Gin Rummy" href="../gin_rummy/" />
         <link rel="canonical" href="https://pettingzoo.farama.org/environments/classic/go.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.png"/><meta name="generator" content="sphinx-5.1.1, furo 2022.09.15"/>
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/><meta name="generator" content="sphinx-5.2.1, furo 2022.09.15.dev1"/>
         <title>Go - PettingZoo Documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=2369d5bf2a113d250c0e61edf00f6b0494869a15" />
     
     
 
@@ -36,10 +35,101 @@
       }
     }
   }
-</style>
-
-</head>
+</style></head>
   <body>
+
+    <header class="farama-header">
+      <div class="farama-header__left">
+        <a href="https://farama.org/">
+          <img class="farama-header__logo" src="../../../_static/img/farama_solid_white.svg">
+          <h1 class="farama-header__title">The Farama Foundation</h1>
+        </a>
+      </div>
+      <div class="farama-header__right">
+        <ul class="farama-header__nav">
+          <li>
+            <a href="https://gymnasium.farama.org">Gymnasium</a>
+          </li>
+          <li>
+            <a href="https://pettingzoo.farama.org">PettingZoo</a>
+          </li>
+          <li>
+            <div class="farama-header__dropdown-container">
+              More
+              <div class="farama-header__dropdown-menu">
+                <ul>
+                  <li>
+                    <a href="https://github.com/Farama-Foundation/SuperSuit">SuperSuit</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Farama-Foundation/tinyscaler">Tinyscaler</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Farama-Foundation/gym-robotics">Gymnasium-Robotics
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Farama-Foundation/AutoROM">AutoROM</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Farama-Foundation/MiniGrid">MiniGrid</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Farama-Foundation/Jumpy">JumPy</a>
+                  </li>
+                </ul>
+              </div>
+          </div>
+          </li>
+        </ul>
+        <div class="farama-header-menu">
+          <span class="farama-header-menu__btn">Projects</span>
+          <div class="farama-header-menu__list">
+            <div class="farama-header-menu-list__header">
+              <span>Projects</span>
+                <button id="farama-close-menu">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-close">
+                    <line x1="3" y1="21" x2="21" y2="3"></line>
+                    <line x1="3" y1="3" x2="21" y2="21"></line>
+                  </svg>
+                </button>
+              </label>
+            </div>
+            <ul>
+              <li>
+                <a href="https://gymnasium.farama.org">Gymnasium</a>
+              </li>
+              <li>
+                <a href="https://pettingzoo.farama.org">PettingZoo</a>
+              </li>
+              <li>
+                <a href="https://github.com/Farama-Foundation/SuperSuit">SuperSuit</a>
+              </li>
+              <li>
+                <a href="https://github.com/Farama-Foundation/tinyscaler">Tinyscaler</a>
+              </li>
+              <li>
+                <a href="https://github.com/Farama-Foundation/gym-robotics">Gymnasium-Robotics
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/Farama-Foundation/AutoROM">AutoROM</a>
+              </li>
+              <li>
+                <a href="https://github.com/Farama-Foundation/MiniGrid">MiniGrid</a>
+              </li>
+              <li>
+                <a href="https://github.com/Farama-Foundation/Jumpy">JumPy</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="farama-header-menu__overlay"></div>
+
     
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
@@ -275,7 +365,19 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          
+  
+  <div class="edit-this-page">
+  <a class="muted-link" href="https://github.com/Farama-Foundation/PettingZoo/edit/master/docs/environments/classic/go.md" title="Edit this page">
+    <svg aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4" />
+      <line x1="13.5" y1="6.5" x2="17.5" y2="10.5" />
+    </svg>
+    <span class="visually-hidden">Edit this page</span>
+  </a>
+</div><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -289,8 +391,8 @@
           </label>
         </div>
         <article role="main">
-          <div class="theme-env-icon-container">
-              <img class="theme-env-icon" src="../../../_static/img/icons/classic/go.png">
+          <div class="farama-env-icon-container">
+              <img class="farama-env-icon" src="../../../_static/img/icons/classic/go.png">
             </div>
           <section id="go">
 <h1>Go<a class="headerlink" href="#go" title="Permalink to this heading">#</a></h1>
@@ -472,7 +574,7 @@ whose turn it is. Taking an illegal move ends the game with a reward of -1 for t
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../gin_rummy/">
+            <a class="prev-page" href="../gin_rummy/">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
@@ -496,7 +598,11 @@ whose turn it is. Taking an illegal move ends the game with a reward of -1 for t
           </div>
           <div class="right-details">
             <div class="icons">
-              
+              <a class="muted-link" href="https://github.com/Farama-Foundation/PettingZoo" aria-label="On GitHub">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+              </a>
             </div>
           </div>
         </div>
@@ -535,11 +641,37 @@ whose turn it is. Taking an illegal move ends the game with a reward of -1 for t
       
     </aside>
   </div>
-</div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+</div>
+    <script>
+      let toggleMenu = () => {
+        document.querySelector(".farama-header-menu").classList.toggle("active");
+        document.querySelector(".farama-header-menu__overlay").classList.toggle("active");
+      }
+
+      document.querySelector(".farama-header-menu__btn").addEventListener("click", toggleMenu);
+      document.getElementById("farama-close-menu").addEventListener("click", toggleMenu);
+      document.querySelector(".farama-header-menu__overlay").addEventListener("click", toggleMenu);
+
+      window.onclick = function(event) {
+        if (!event.target.matches('.farama-header-menu__btn')) {
+          const dropdown = document.querySelector(".farama-header-menu__list");
+          if (dropdown.classList.contains('active')) {
+            dropdown.classList.remove('active');
+            document.querySelector(".farama-header-menu__overlay").classList.remove("active");
+          }
+        }
+      }
+    </script>
+
+    
+    
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
     <script src="../../../_static/scripts/furo.js"></script>
     </body>
 </html>
