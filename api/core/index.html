@@ -3,14 +3,14 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Parallel API" href="../parallel/" /><link rel="prev" title="Tutorials" href="../../content/tutorials/" />
+<link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Parallel API" href="../parallel/" /><link rel="prev" title="RLLib 2: RL for Pistonball" href="../../tutorials/rllib/pistonball/" />
         <link rel="canonical" href="https://pettingzoo.farama.org/api/core.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.png"/><meta name="generator" content="sphinx-5.2.3, furo 2022.09.15.dev1"/>
         <title>Core API - PettingZoo Documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=2369d5bf2a113d250c0e61edf00f6b0494869a15" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=c2d5e51f39e130612d57e150aebc94239a19910f" />
     
     
 
@@ -39,54 +39,33 @@
   <body>
 
     <header class="farama-header">
-      <div class="farama-header__left">
-        <a href="https://farama.org/">
-          <img class="farama-header__logo" src="../../_static/img/farama_solid_white.svg">
-          <h1 class="farama-header__title">The Farama Foundation</h1>
-        </a>
-      </div>
-      <div class="farama-header__right">
-        <ul class="farama-header__nav">
-          <li>
-            <a href="https://gymnasium.farama.org">Gymnasium</a>
-          </li>
-          <li>
-            <a href="https://pettingzoo.farama.org">PettingZoo</a>
-          </li>
-          <li>
-            <div class="farama-header__dropdown-container">
-              More
-              <div class="farama-header__dropdown-menu">
-                <ul>
-                  <li>
-                    <a href="https://github.com/Farama-Foundation/SuperSuit">SuperSuit</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/Farama-Foundation/tinyscaler">Tinyscaler</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/Farama-Foundation/gym-robotics">Gymnasium-Robotics
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/Farama-Foundation/AutoROM">AutoROM</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/Farama-Foundation/MiniGrid">MiniGrid</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/Farama-Foundation/Jumpy">JumPy</a>
-                  </li>
-                </ul>
-              </div>
-          </div>
-          </li>
-        </ul>
-        <div class="farama-header-menu">
-          <span class="farama-header-menu__btn">Projects</span>
-          <div class="farama-header-menu__list">
-            <div class="farama-header-menu-list__header">
-              <span>Projects</span>
+      <div class="farama-header__container">
+        <div class="farama-header__left">
+          <a href="../../">
+              <img class="farama-header__logo only-light" src="../../_static/img/PettingZoo.svg" alt="Light Logo"/>
+              <img class="farama-header__logo only-dark" src="../../_static/img/PettingZoo_White.svg" alt="Dark Logo"/>
+            <h1 class="farama-header__title">PettingZoo Documentation</h1>
+          </a>
+        </div>
+        <div class="farama-header__right">
+          <div class="farama-header-menu">
+            <div class="farama-header-menu__btn">
+              <span class="farama-header-menu__btn-name">
+                The Farama Foundation
+              </span>
+              <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+                  <defs></defs>
+                  <path d="M 3 4.677 C 3 3.751 3.659 3 4.474 3 L 27.526 3 C 28.341 3 29 3.751 29 4.677 C 29 5.603 28.341 6.354 27.526 6.354 L 4.474 6.354 C 3.659 6.354 3 5.603 3 4.677 Z" bx:origin="0.622825 3.875593"></path>
+                  <path d="M 3 16 C 3 15.074 3.659 14.323 4.474 14.323 L 27.526 14.323 C 28.341 14.323 29 15.074 29 16 C 29 16.926 28.341 17.677 27.526 17.677 L 4.474 17.677 C 3.659 17.677 3 16.926 3 16 Z" bx:origin="0.622825 0.5"></path>
+                  <path d="M 3 27.323 C 3 26.397 3.659 25.646 4.474 25.646 L 27.526 25.646 C 28.341 25.646 29 26.397 29 27.323 C 29 28.249 28.341 29 27.526 29 L 4.474 29 C 3.659 29 3 28.249 3 27.323 Z" bx:origin="0.622825 -2.875591"></path>
+              </svg>
+            </div>
+            <div class="farama-header-menu__list">
+              <div class="farama-header-menu-list__header">
+                <a href="https://farama.org">
+                  <img class="farama-header-menu__logo" src="../../_static/img/farama_solid_white.svg">
+                  <span>The Farama Foundation</span>
+                </a>
                 <button id="farama-close-menu">
                   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-close">
@@ -94,35 +73,38 @@
                     <line x1="3" y1="3" x2="21" y2="21"></line>
                   </svg>
                 </button>
-              </label>
+              </div>
+              <div class="farama-header-menu-list__body">
+                <span class="farama-header-menu__section-title">Projects</span>
+                <ul>
+                  <li>
+                    <a href="https://gymnasium.farama.org">Gymnasium</a>
+                  </li>
+                  <li>
+                    <a href="https://pettingzoo.farama.org">PettingZoo</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Farama-Foundation/SuperSuit">SuperSuit</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Farama-Foundation/MiniGrid">MiniGrid</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Farama-Foundation/gym-robotics">Gymnasium-Robotics
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Farama-Foundation/tinyscaler">Tinyscaler</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Farama-Foundation/AutoROM">AutoROM</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Farama-Foundation/Jumpy">JumPy</a>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <ul>
-              <li>
-                <a href="https://gymnasium.farama.org">Gymnasium</a>
-              </li>
-              <li>
-                <a href="https://pettingzoo.farama.org">PettingZoo</a>
-              </li>
-              <li>
-                <a href="https://github.com/Farama-Foundation/SuperSuit">SuperSuit</a>
-              </li>
-              <li>
-                <a href="https://github.com/Farama-Foundation/tinyscaler">Tinyscaler</a>
-              </li>
-              <li>
-                <a href="https://github.com/Farama-Foundation/gym-robotics">Gymnasium-Robotics
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/Farama-Foundation/AutoROM">AutoROM</a>
-              </li>
-              <li>
-                <a href="https://github.com/Farama-Foundation/MiniGrid">MiniGrid</a>
-              </li>
-              <li>
-                <a href="https://github.com/Farama-Foundation/Jumpy">JumPy</a>
-              </li>
-            </ul>
           </div>
         </div>
       </div>
@@ -237,16 +219,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../">
-  
-  <div class="sidebar-logo-container">
-    <img class="sidebar-logo only-light" src="../../_static/img/PettingZoo.svg" alt="Light Logo"/>
-    <img class="sidebar-logo only-dark" src="../../_static/img/PettingZoo_White.svg" alt="Dark Logo"/>
-  </div>
-  
-  <span class="sidebar-brand-text">PettingZoo Documentation</span>
-  
-</a><form class="sidebar-search-container" method="get" action="../../search/" role="search">
+      <div class="sidebar-sticky"><form class="sidebar-search-container" method="get" action="../../search/" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
@@ -257,7 +230,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../../content/basic_usage/">Basic Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../content/environment_creation/">Environment Creation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../content/environment_tests/">Testing Environments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../content/tutorials/">Tutorials</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/cleanrl/implementing_PPO/">CleanRL: Implementing PPO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/tianshou/beginner/">Tianshou: Basic API Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/tianshou/intermediate/">Tianshou: Training Agents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/tianshou/advanced/">Tianshou: CLI and Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/rllib/holdem/">RLLib 2: RL for Simple Poker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/rllib/pistonball/">RLLib 2: RL for Pistonball</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API</span></p>
 <ul class="current">
@@ -499,7 +480,7 @@ the <cite>api_test</cite> documented in the Developer documentation on the websi
 <dd><p>A dict of the observation spaces of every agent, keyed by name. This cannot be changed through play or resetting.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Dict[AgentID, gym.spaces.Space]</p>
+<dd class="field-odd"><p>Dict[AgentID, gymnasium.spaces.Space]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -510,7 +491,7 @@ the <cite>api_test</cite> documented in the Developer documentation on the websi
 <dd><p>A dict of the action spaces of every agent, keyed by name. This cannot be changed through play or resetting.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Dict[AgentID, gym.spaces.Space]</p>
+<dd class="field-odd"><p>Dict[AgentID, gymnasium.spaces.Space]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -537,9 +518,10 @@ the <cite>api_test</cite> documented in the Developer documentation on the websi
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pettingzoo.utils.env.AECEnv.render">
-<span class="sig-name descname"><span class="pre">render</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'human'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">np.ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></span><a class="headerlink" href="#pettingzoo.utils.env.AECEnv.render" title="Permalink to this definition">#</a></dt>
-<dd><p>Displays a rendered frame from the environment, if supported.</p>
-<p>Alternate render modes in the default environments are <cite>‘rgb_array’</cite>
+<span class="sig-name descname"><span class="pre">render</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">np.ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span></span></span><a class="headerlink" href="#pettingzoo.utils.env.AECEnv.render" title="Permalink to this definition">#</a></dt>
+<dd><p>Renders the environment as specified by self.render_mode.</p>
+<p>Render mode can be <cite>human</cite> to display a window.
+Other render modes in the default environments are <cite>‘rgb_array’</cite>
 which returns a numpy array and is supported by all environments outside of classic,
 and <cite>‘ansi’</cite> which returns the strings printed (specific to classic environments).</p>
 </dd></dl>
@@ -576,14 +558,14 @@ or any other resources that should be released.</p>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-            <a class="prev-page" href="../../content/tutorials/">
+            <a class="prev-page" href="../../tutorials/rllib/pistonball/">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Tutorials</div>
+                <div class="title">RLLib 2: RL for Pistonball</div>
                 
               </div>
             </a>
