@@ -375,6 +375,8 @@
           
           <section id="core-api">
 <h1>Core API<a class="headerlink" href="#core-api" title="Permalink to this heading">#</a></h1>
+<section id="aecenv">
+<h2>AECEnv<a class="headerlink" href="#aecenv" title="Permalink to this heading">#</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="pettingzoo.utils.env.AECEnv">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pettingzoo.utils.env.</span></span><span class="sig-name descname"><span class="pre">AECEnv</span></span><a class="headerlink" href="#pettingzoo.utils.env.AECEnv" title="Permalink to this definition">#</a></dt>
@@ -384,7 +386,7 @@ the <cite>api_test</cite> documented in the Developer documentation on the websi
 </dd></dl>
 
 <section id="attributes">
-<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this heading">#</a></h2>
+<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this heading">#</a></h3>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pettingzoo.utils.env.AECEnv.agents">
 <span class="sig-prename descclassname"><span class="pre">AECEnv.</span></span><span class="sig-name descname"><span class="pre">agents</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#pettingzoo.utils.env.AECEnv.agents" title="Permalink to this definition">#</a></dt>
@@ -400,11 +402,6 @@ the <cite>api_test</cite> documented in the Developer documentation on the websi
 <dt class="sig sig-object py" id="pettingzoo.utils.env.AECEnv.num_agents">
 <span class="sig-prename descclassname"><span class="pre">AECEnv.</span></span><span class="sig-name descname"><span class="pre">num_agents</span></span><a class="headerlink" href="#pettingzoo.utils.env.AECEnv.num_agents" title="Permalink to this definition">#</a></dt>
 <dd><p>The length of the agents list.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>int</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py attribute">
@@ -422,11 +419,6 @@ the <cite>api_test</cite> documented in the Developer documentation on the websi
 <dt class="sig sig-object py" id="pettingzoo.utils.env.AECEnv.max_num_agents">
 <span class="sig-prename descclassname"><span class="pre">AECEnv.</span></span><span class="sig-name descname"><span class="pre">max_num_agents</span></span><a class="headerlink" href="#pettingzoo.utils.env.AECEnv.max_num_agents" title="Permalink to this definition">#</a></dt>
 <dd><p>The length of the possible_agents list.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>int</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py attribute">
@@ -490,7 +482,7 @@ the <cite>api_test</cite> documented in the Developer documentation on the websi
 
 </section>
 <section id="methods">
-<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this heading">#</a></h2>
+<h3>Methods<a class="headerlink" href="#methods" title="Permalink to this heading">#</a></h3>
 <dl class="py method">
 <dt class="sig sig-object py" id="pettingzoo.utils.env.AECEnv.step">
 <span class="sig-prename descclassname"><span class="pre">AECEnv.</span></span><span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ActionType</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pettingzoo.utils.env.AECEnv.step" title="Permalink to this definition">#</a></dt>
@@ -535,6 +527,7 @@ and <cite>‘ansi’</cite> which returns the strings printed (specific to class
 or any other resources that should be released.</p>
 </dd></dl>
 
+</section>
 </section>
 </section>
 
@@ -600,6 +593,7 @@ or any other resources that should be released.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Core API</a><ul>
+<li><a class="reference internal" href="#aecenv">AECEnv</a><ul>
 <li><a class="reference internal" href="#pettingzoo.utils.env.AECEnv"><code class="docutils literal notranslate"><span class="pre">AECEnv</span></code></a></li>
 <li><a class="reference internal" href="#attributes">Attributes</a><ul>
 <li><a class="reference internal" href="#pettingzoo.utils.env.AECEnv.agents"><code class="docutils literal notranslate"><span class="pre">AECEnv.agents</span></code></a></li>
@@ -620,6 +614,8 @@ or any other resources that should be released.</p>
 <li><a class="reference internal" href="#pettingzoo.utils.env.AECEnv.render"><code class="docutils literal notranslate"><span class="pre">AECEnv.render()</span></code></a></li>
 <li><a class="reference internal" href="#pettingzoo.utils.env.AECEnv.seed"><code class="docutils literal notranslate"><span class="pre">AECEnv.seed()</span></code></a></li>
 <li><a class="reference internal" href="#pettingzoo.utils.env.AECEnv.close"><code class="docutils literal notranslate"><span class="pre">AECEnv.close()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
