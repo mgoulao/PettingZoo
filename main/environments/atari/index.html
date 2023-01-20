@@ -15,7 +15,7 @@
         <title>Atari - PettingZoo Documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=3cf7b839e8c50b5f3a39bb99d90baa7b845de926" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=91b9f2a71a58ed2481980f1e5725e16457fde93d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=b332e145f118bbc5b181998bee244c1e810e1f8b" />
     
     
 
@@ -683,7 +683,7 @@
 <section id="preprocessing">
 <h2>Preprocessing<a class="headerlink" href="#preprocessing" title="Permalink to this heading">#</a></h2>
 <p>We encourage the use of the <a class="reference external" href="https://github.com/Farama-Foundation/SuperSuit">supersuit</a> library for preprocessing. The unique dependencies for this set of environments can be installed via:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install supersuit
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>supersuit
 </pre></div>
 </div>
 <p>Here is some example usage for the Atari preprocessing:</p>
@@ -846,11 +846,11 @@ installed at the default AutoROM path.</p>
         const menuBtn = document.querySelector(".farama-header-menu__btn");
         const menuContainer = document.querySelector(".farama-header-menu-container");
         if (document.querySelector(".farama-header-menu").classList.contains("active")) {
-          menuBtn.ariaExpanded = "false";
-          menuContainer.ariaHidden = "true";
+          menuBtn.setAttribute("aria-expanded", "false");
+          menuContainer.setAttribute("aria-hidden", "true");
         } else {
-          menuBtn.ariaExpanded = "true";
-          menuContainer.ariaHidden = "false";
+          menuBtn.setAttribute("aria-expanded", "true");
+          menuContainer.setAttribute("aria-hidden", "false");
         }
         document.querySelector(".farama-header-menu").classList.toggle("active");
       }
@@ -1020,7 +1020,7 @@ installed at the default AutoROM path.</p>
         githubUser: 'Farama-Foundation',
         githubRepo: 'PettingZoo',
       };
-      fetch('/_static/versioning/versioning_menu.html').then(response => {
+      fetch('/main/_static/versioning/versioning_menu.html').then(response => {
         if (response.status === 200) {
             response.text().then(text => {
                 const container = document.createElement("div");
